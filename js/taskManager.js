@@ -1,11 +1,11 @@
-
+console.log("connected!")
 
 
 class TaskManager {
     constructor() {
-      this.tasks = {
-      };
-    console.log("tasks")
+      this.tasks = [];
+      
+    console.log(this.tasks)
     }
   
   }
