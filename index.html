@@ -7,6 +7,8 @@
         <title>Buddy Task</title>
 
         <link rel="stylesheet" type="text/css" href="/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     </head>
 
 
@@ -20,50 +22,49 @@
                         <div class="form-content">
                             <div class="form-items">
                                 <div class="header">
-                                    <img src="/assets/buddTaskorgange.png" alt="logo" />
+                                    <img id="logo" src="/assets/buddTaskorgange.png" alt="logo" />
                                     <h3> Your Best Friend!</h3>
                                 </div>
-
+                                <div id="alert" class="alert alert-danger d-none" role="alert">
+                                    A simple danger alert—check it out!
+                                  </div>
+                                  <div id="success" class="alert alert-success d-none" role="alert">
+                                    You have successfully added the task!
+                                  </div>
      <!-- Task Form -->                   
                                 <p>Add Your Tasks Below:</p>
-                                <form class="requires-validation" novalidate>
+                                <form 
+                                id="taskForm"
+                                novalidate>
 
                                     <div class="col-md-12">
-                                    <input class="form-control" type="text" name="name" placeholder="Name" required>
-                                    <div class="valid-feedback">Name field is valid!</div>
-                                    <div class="invalid-feedback">Name field cannot be blank!</div>
+                                    <input class="form-control" type="text" name="name" placeholder="Name" required>                
                                     </div>
 
                                     <div class="col-md-12">
                                         <input class="form-control" type="description" name="description" placeholder="Description" required>
-                                        <div class="valid-feedback">Description field is valid!</div>
-                                        <div class="invalid-feedback">Description field cannot be blank!</div>
                                     </div>
 
                                 <div class="col-md-12">
-                                        <select class="form-select mt-3" required>
+                                        <select id="status" class="form-select mt-3" required>
                                             <option selected disabled value="">Status</option>
-                                            <option value="jweb">To Do</option>
-                                            <option value="sweb">In Progress</option>
-                                            <option value="pmanager">Completed</option>
+                                            <option value="Todo">To Do</option>
+                                            <option value="In Progress">In Progress</option>
+                                            <option value="Completed">Completed</option>
                                     </select>
-                                        <div class="valid-feedback">You selected a status!</div>
-                                        <div class="invalid-feedback">Please select a status!</div>
                                 </div>
 
 
                                 <div class="col-md-12">
                                     <input class="form-control" type="assignedTo" name="assignedTo" placeholder="Assigned To" required>
-                                    <div class="valid-feedback">Password field is valid!</div>
-                                    <div class="invalid-feedback">Password field cannot be blank!</div>
                                 </div>
 
                                 <div class="time-box">
                                     <label for="meeting-time">Due Date</label>
 
-                                    <input type="datetime-local" id="meeting-time"
-                                        name="meeting-time" value="2018-06-12T19:30"
-                                        min="2018-06-07T00:00" max="2018-06-14T00:00">
+                                    <input type="date" id="tasktime"
+                                        name="tasktime" required />
+
 
                                 </div>
 
@@ -84,71 +85,19 @@
 
 
 
-            <div class="container">
+            <div class="container justify-content-center text-center">
                 <h2 class="display-4">My Tasks</h2>
                     <div id="list-group">
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                <h4 class="taskName">Bakery Website</h4>
-                                <h6 class="taskDescription">Create the CSS</h6>
-                                <h6 class="taskAssignedTo">Assigned To</h6>
-                                <h6 class="taskDueDate">Due Date</h6>
-                                <span class="taskStatus">In Progress</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                <h4 class="taskName">Bakery Website</h4>
-                                <h6 class="taskDescription">Create the CSS</h6>
-                                <h6 class="taskAssignedTo">Assigned To</h6>
-                                <h6 class="taskDueDate">Due Date</h6>
-                                <span class="taskStatus">In Progress</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                <h4 class="taskName">Bakery Website</h4>
-                                <h6 class="taskDescription">Create the CSS</h6>
-                                <h6 class="taskAssignedTo">Assigned To</h6>
-                                <h6 class="taskDueDate">Due Date</h6>
-                                <span class="taskStatus">In Progress</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                <h4 class="taskName">Bakery Website</h4>
-                                <h6 class="taskDescription">Create the CSS</h6>
-                                <h6 class="taskAssignedTo">Assigned To</h6>
-                                <h6 class="taskDueDate">Due Date</h6>
-                                <span class="taskStatus">In Progress</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                <h4 class="taskName">Bakery Website</h4>
-                                <h6 class="taskDescription">Create the CSS</h6>
-                                <h6 class="taskAssignedTo">Assigned To</h6>
-                                <h6 class="taskDueDate">Due Date</h6>
-                                <span class="taskStatus">In Progress</span>
-                                <a href="#" class="btn btn-primary">Delete</a>
-                                </div>
-                            </div>
+                            
                     </div>
             </div>
 
 
 
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/taskManager.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
-    
+
 
   </body>
 

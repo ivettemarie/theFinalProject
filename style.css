@@ -8,13 +8,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+body {
     height: 100%;
     background: #1C9DFF;
     background: -moz-linear-gradient(top, #1C9DFF 0%, #2E5AA4 50%, #132440 100%);
     background: -webkit-linear-gradient(top, #1C9DFF 0%, #2E5AA4 50%, #132440 100%);
     background: linear-gradient(to bottom, #1C9DFF 0%, #2E5AA4 50%, #132440 100%);
-    overflow: hidden;
 }
 
 .form-holder {
@@ -76,6 +75,9 @@ html, body {
     margin-bottom: 30px;
 }
 
+.form-items {
+    background-color: rgba(0,0,0,0.5);
+}
 
 .form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
     color: #fff;
@@ -143,9 +145,14 @@ html, body {
 }
 
 .invalid-feedback{
-    color: #ff606e;
+    color: #5a050c;
 }
 
 .valid-feedback{
-   color: #2acc80;
+   color: #12be6e;
+}
+
+
+.display-4{
+    color: #fff
 }
