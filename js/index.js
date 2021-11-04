@@ -9,6 +9,7 @@ let taskManager = new TaskManager();
 //Gets the task form element
 let taskForm = document.querySelector("#taskForm");
 
+
 //Function that validates input, and sets error messages
 function validFormFieldInput() {
     let isValid = true;
@@ -43,7 +44,11 @@ function validFormFieldInput() {
     return isValid;
 }
 
+
+
+
 //Sets a submit listener to task form, checks if valid to submit, or show error messages if not
+
 taskForm.addEventListener("submit", function(e){
     e.preventDefault();
 
@@ -80,6 +85,10 @@ taskForm.addEventListener("submit", function(e){
     taskManager.render();
 
 }) 
+
+
+
+
 
 
 

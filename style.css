@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
 
+
+/* Styling of the body*/
 *, body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -152,7 +154,7 @@ body {
    color: #12be6e;
 }
 
-
+/* Styling of the My Task Cards*/
 .display-4{
     color: #fff
 }

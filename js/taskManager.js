@@ -1,6 +1,7 @@
 console.log("connected!")
 
-
+ //variable with the Cards
+ 
 const createTaskHtml = (name, description, assignedTo, dueDate, status) =>{ 
     let cardHtml = `<div class="card mx-auto" style="width: 18rem;">
                                 <div class="card-body">
@@ -9,12 +10,18 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status) =>{
                                 <h6 class="taskAssignedTo">${assignedTo}</h6>
                                 <h6 class="taskDueDate">${dueDate}</h6>
                                 <span class="taskStatus">${status}</span>
+                                <button type="button" class="done-button btn btn-success">Done</button>
                                 <a href="#" class="btn btn-primary">Delete</a>
                                 </div>
-                            </div>`;
+                                 </div>`;
+
 
     return cardHtml;
+
+    
 }
+
+
 
 class TaskManager {
     //Constructor - Runs when using new
@@ -24,6 +31,7 @@ class TaskManager {
 
        console.log(this.tasks)
     }
+
 
     //Method, adds a new task to this.tasks array
     addTask( name, description, assignedTo, dueDate, status = "Todo"){
@@ -62,6 +70,10 @@ class TaskManager {
         document.querySelector("#list-group").innerHTML = tasksHtml;
 
     }
+    
+    
+
+
   
   }
 
