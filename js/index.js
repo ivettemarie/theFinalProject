@@ -2,10 +2,10 @@ console.log("connected!")
 
 // ============================================//
 
-
 //Initializes the taskManager object
 let taskManager = new TaskManager();
-
+taskManager.load();
+taskManager.render();
 //Gets the task form element
 let taskForm = document.querySelector("#taskForm");
 
@@ -77,20 +77,53 @@ taskForm.addEventListener("submit", function(e){
 
     //Adds new task to task manager array
     taskManager.addTask(taskName, taskDescription, taskAssigned, taskDate, taskStatus);
-    
-    //Resets form
-    taskForm.reset();
-
+    taskManager.save();
     //Re-renders card list with new tasks
     taskManager.render();
 
-}) 
 
+    //Resets form
+    taskForm.reset();
+    
+    });
 
+// Select the Tasks List
+const tasksList = document.querySelector('#tasksList');
 
+// Add an 'onclick' event listener to the Tasks List
+tasksList.addEventListener('click', (event) => {
+    console.log(event);
+    // Check if a "Mark As Done" button was clicked
+    if (event.target.classList.contains('done-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement;
 
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskid);
 
+        // Get the task from the TaskManager using the taskId
+        const task = taskManager.getTaskById(taskId);
 
+        if (task != null) {
+            // Update the task status to 'done'
+            task.status = 'Completed';
+            taskManager.save();
+        }
+        // Render the tasks
+        taskManager.render();
 
+    } else if (event.target.classList.contains('delete-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement;
 
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskid);
 
+        taskManager.deleteTask(taskId);
+        taskManager.save();
+        // Render the tasks
+        taskManager.render();
+
+    }
+    
+})
