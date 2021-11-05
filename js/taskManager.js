@@ -100,32 +100,32 @@ class TaskManager {
         //Return null if no task with id found
         return null;
     }
-
-    save(){
-        const tasksJson = JSON.stringify(this.tasks);
-        localStorage.setItem("tasks", tasksJson);
-        const currentId = this.currentId.toString();
-        localStorage.setItem("currentId", currentId);
-    }
-
-    load(){
-        const tasksJson = localStorage.getItem("tasks");
-        if (tasksJson != null) {
-            this.tasks = JSON.parse(tasksJson);
+        //Save to the local storage with the JSON parse and will change all the array values into a readable format in the console.
+        save(){
+            const tasksJson = JSON.stringify(this.tasks);
+            localStorage.setItem("tasks", tasksJson);
+            const currentId = this.currentId.toString();
+            localStorage.setItem("currentId", currentId);
         }
 
-        const currentId = localStorage.getItem("currentId");
-        if (currentId != null) {
-            this.currentId = JSON.parse(currentId);
+        load(){
+            const tasksJson = localStorage.getItem("tasks");
+            if (tasksJson != null) {
+                this.tasks = JSON.parse(tasksJson);
+            }
+
+            const currentId = localStorage.getItem("currentId");
+            if (currentId != null) {
+                this.currentId = JSON.parse(currentId);
+            }
         }
-    }
-    
+        
   
   }
 
 
-  // So it can be included in test
-  module.exports = TaskManager;
+        // So it can be included in testing
+        module.exports = TaskManager;
 
 
   
