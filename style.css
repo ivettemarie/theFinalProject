@@ -18,6 +18,11 @@ body {
     background: linear-gradient(to bottom, #1C9DFF 0%, #2E5AA4 50%, #132440 100%);
 }
 
+.scroll {
+    font-size: 1rem;
+    color: #fff;
+}
+
 .form-holder {
       display: flex;
       flex-direction: column;
